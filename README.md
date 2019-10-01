@@ -36,7 +36,17 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 ### Instructions
 
-Follow the instructions in `Navigation.ipynb` to get started with training your own agent!  
+Follow the instructions in `Navigation_Udacity_Workspace.ipynb` to get started with training your own agent!  
+
+Please scroll to the section 4. It's Your Turn!. Please note that the previous section is to examine how the agent and the environment interacts with each other. The subsequent sections then defines the following:
+
+1. Libraries
+2. Environment
+3. Define a DQN Network
+4. Setup Agent and define how the agent step, act, learn and soft update.
+5. Define Agent
+6. Run through 2k episodes to collect scores and determine DQN performance
+7. Record results and model, and generate charts
 
 ### (Optional) Challenge: Learning from Pixels
 
