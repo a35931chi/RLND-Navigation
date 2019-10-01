@@ -36,9 +36,9 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 ### Instructions
 
-Follow the instructions in `Navigation_Udacity_Workspace.ipynb` to get started with training your own agent!  
+Navigate through `Navigation_Udacity_Workspace.ipynb` to get started with training your own agent!  
 
-Please scroll to the section 4. It's Your Turn!. Please note that the previous section is to examine how the agent and the environment interacts with each other. The subsequent sections then defines the following:
+Please scroll to the section 4 because this is where the actual training begins! Please note that the previous section is to examine how the agent and the environment interacts with each other. Section 4 defines the following:
 
 1. Libraries
 2. Environment
