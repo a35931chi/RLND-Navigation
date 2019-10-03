@@ -1,0 +1,164 @@
+
+Meets Specifications - 20191003
+
+Congratulations on completing Project 1.
+
+'Social' factors should not be ignored when working in the fields of AI/Machine learning. While you're building algorithms to help machines 'think', it will probably be another human being who evaluates your work.
+
+A well-tuned model might not be given due consideration if it's report does not reflect the work and consideration which went into it. Some comments have been included in the review below to help you improve the report and README.
+
+Additional reading: https://blog.deepgram.com/how-to-get-a-job-in-deep-learning/
+
+Keep up the good work, and good luck with the remaining projects of this nanodegree. We're rooting for you! :udacious:
+Training Code
+
+The repository (or zip file) includes functional, well-documented, and organized code for training the agent.
+
+The code is written in PyTorch and Python 3.
+
+The submission includes the saved model weights of the successful agent.
+Best practice:
+
+Checkpoint files should be given a timestamp and label to denote the stage of the project it belongs to.
+
+Example:
+
+    pre-training_10-01-2019.pth
+    training_10-02-2019.pth
+
+Tip :
+
+Checkpoints are a convenience for a machine/deep learning engineer, allowing resumption of interrupted training.
+
+Use this technique liberally: https://blog.floydhub.com/checkpointing-tutorial-for-tensorflow-keras-and-pytorch/
+
+Depending on the type of work and available hardware, we can rapidly resume interrupted training without loss of progress.
+README
+
+The GitHub (or zip file) submission includes a README.md file in the root of the repository.
+Best practice:
+
+The README file is the first touch point for the project, and can be used to introduce the problem you're trying to solve. Write in an engaging manner without using too much of the initial provided template. Below are some suggestions for inclusion in the README.
+
+A few notes on structuring the README from head to tail:
+
+    Introduction and Objectives
+    Background:
+        some theory: https://cs.wmich.edu/~trenary/files/cs5300/RLBook/node66.html
+        this project utilizes the DQN algorithm/model.
+        give examples of other studies which have been done: here and here
+    Code organization,
+    Exploratory activities (pre-training, data cleaning, etc)
+
+Use the README to engage the reader (might be a recruiter/collaborator!) and encourage further exploration of your implementation.
+Recommended:
+
+The README functions as documentation for the project, and can be supplemented with the following:
+
+    implementation details (as pre-cursory information to the report),
+    anticipated techniques, and
+    relevant mathematical models.
+
+The README describes the the project environment details (i.e., the state and action spaces, and when the environment is considered solved).
+
+Describing the goal for the agent in clear, concise language ( i.e. 'the agent must get an average score of +13 over 100 consecutive episodes' ) indicates what the reader should look for.
+
+More importantly, it lets you as the engineer, set the baseline for success.
+
+Set goals for any deep learning projects you undertake to be able to plan, execute and judge its success.
+
+The README has instructions for installing dependencies or downloading needed files.
+
+The README describes how to run the code in the repository, to train the agent. For additional resources on creating READMEs or using Markdown, see here and here.
+
+A brief explanation of this rubric specification:
+
+Instructions and documentation is included with every project for the sake or reproducibility.
+
+Common machine/deep learning models are representations of mathematical models which should consistently produce the same results with similar data and parameters.
+Report
+
+The submission includes a file in the root of the GitHub repository or zip file (one of Report.md, Report.ipynb, or Report.pdf) that provides a description of the implementation.
+Recommended:
+
+You could explain the model and algorithm in intuitive terms, before going into technicalities and using 'jargon' ( e.g. replay buffer, ReLU ) specific to this field.
+
+Resource: https://ai.intel.com/demystifying-deep-reinforcement-learning/
+
+You could cite this paper as an example to begin your explanations of DQN: Playing Atari with Deep Reinforcement Learning.
+
+By citing studies on the topic you increase your credibility in the eyes of the reader.
+Additional:
+
+It's best to include additional description of Deep Q-Learning networks, such as:
+
+    the Bellman equation and its role in generating a sequence of actions which produces rewards,
+    update rules and discount factors,
+    rewards policies,
+    Q-value actions, etc.
+
+The report clearly describes the learning algorithm, along with the chosen hyperparameters. It also describes the model architectures for any neural networks.
+
+The description of the algorithm can be improved by including the model's architecture. Here's an example describing the architecture by describing the convolution and fully connected layers.
+
+Screenshot_2019-10-02_17-07-07.png
+A note on hyperparameters:
+
+To get the best set of hyperparameters, full grid search or random sampling of values could give much better results, at the cost of more time and resources to conduct.
+
+Additional resource:
+
+    automated hyperparameter tuning: https://cloud.google.com/blog/products/ai-machine-learning/deep-reinforcement-learning-on-gcp-using-hyperparameters-and-cloud-ml-engine-to-best-openai-gym-games
+
+A plot of rewards per episode is included to illustrate that the agent is able to receive an average reward (over 100 episodes) of at least +13. The submission reports the number of episodes needed to solve the environment.
+
+The submission has concrete future ideas for improving the agent's performance.
+Recommended:
+
+Extensive research has already been done in the area of Deep Reinforcement Learning and you should probably mention them when mentioning ideas to improve the baseline Deep-Q Network.
+
+Concrete ideas should include a write-up of which aspects of the agent's performance you judge can be improved, independent of the hardware the model is running on. Please explain in detail which aspects of the model you think is fallible to errors and cite the relevant studies to support your ideas.
+
+Use this opportunity to display your knowledge of DQNs. Were there any flaws which you could observe when training the DQN?
+
+note: Providing links to research papers is insufficient. A brief explanation coupled with the link to the cited source should be provided.
+
+Here's an example: ( note: the example below is for demonstration purposes and should not be replicated without written permission )
+
+--- start of example ---
+
+A common belief for new users of DQN is that performance should fairly stably improve as more training time is given (ref. Roderick, Melrose - Implementing the Deep Q Network)
+
+However, it is not uncommon in DQN to have “catastrophic forgetting” in which the agent’s performance can drastically drop after a period of learning.
+
+One of the reasons this forgetting occurs is the inherent instability of approximating the Q-function over a large state-space using these Bellman updates.
+
+At best, DRL-based algorithms learn to navigate in the exact same environment, rather than general technique of navigation which is what classical mapping and path planning provide.
+
+Suggestions
+
+Intuition 1: Expert demonstrations via pre-training results in faster learning and better navigation performance.
+
+    rely on neural networks which are trained using a combination of imitation and reinforcement learning,
+    pre-training through imitation learning,
+
+Intuition 2: To qualitatively assess the visual cues used by agents in course of their navigation, use the normalized sum of absolute gradient of the loss with respect to the input image as a proxy for attention in the image.
+
+    the gradients are normalized for each image so that the maximum gradient is one. The attention values are then used as a soft mask on the image
+
+References
+
+    Dhiman, Vikas - A Critical Investigation of Deep Reinforcement Learning for Navigation, February 7, 2018. https://arxiv.org/pdf/1802.02274.pdf
+    Neuromation - Deep Q-Network, November 16, 2017. https://medium.com/neuromation-io-blog/deep-q-network-d2dbc5688c3b
+    Pfeiffer, M - Reinforced Imitation: Sample Efficient Deep Reinforcement Learning for Map-less Navigation by Leveraging Prior Demonstrations, May 18, 2018. https://arxiv.org/pdf/1805.07095.pdf
+
+--- end of example ---
+Recommended:
+
+The ideas for 'Future Work' can be structured as follows:
+
+    identify weaknesses you observed during training,
+    give a brief description of the cause of the weakness - e.g. Was the mathematical model somehow ineffective for this task? Is the rewards system faulty?
+    structure ideas around the improvements of the aforementioned weaknesses,
+    provide citation to support the ideas.
+
